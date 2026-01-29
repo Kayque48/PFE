@@ -1,5 +1,6 @@
 // Exercício 1: Verificador de Turno e Prioridade
 
+
 function classificarPrioridade() {
 
     alert('Classificador de Tarefas');
@@ -37,6 +38,8 @@ function classificarPrioridade() {
 
 }
 
+// classificarPrioridade();
+
 // Exercício 2: Calculadora de Gastos Mensais
 function calcularSalario () {
 
@@ -63,6 +66,8 @@ function calcularSalario () {
 
 }
 
+// calcularSalario();  
+
 // Exercício 3: Formatador de Nomes para a Agenda
 function formatarNome () {
     alert('Formatador de Nomes para a Agenda');
@@ -71,6 +76,8 @@ function formatarNome () {
 
     return console.log(nome.trim().toUpperCase());
 }
+
+// formatarNome();
 
 // Exercício 4: Contador de Dias para o Evento
 function contarDias() {
@@ -90,6 +97,8 @@ function contarDias() {
     return console.log(Math.ceil(di));
 }
 
+// contarDias();
+
 // Exercício 5: Varredura de Compromissos (Loops)
 
 function validarHorario() {
@@ -105,3 +114,5 @@ function validarHorario() {
         }
     });
 }
+
+// validarHorario()
