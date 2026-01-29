@@ -1,0 +1,107 @@
+// Exercício 1: Verificador de Turno e Prioridade
+
+function classificarPrioridade() {
+
+    alert('Classificador de Tarefas');
+
+    let hora = parseInt(prompt('Digite a hora (0-23): '));
+    let prioridade = parseInt(prompt('Digite a prioridade (1-10): '));
+
+    let turno = '';
+    
+    if (hora >= 0 && hora < 12) {
+        turno = 'manhã';
+    } else if (hora >= 12 && hora < 18) {
+        turno = 'tarde';
+    }
+    else if (hora >= 18 && hora <= 23) {
+        turno = 'noite';
+    } else {
+        turno = 'hora inválida';
+    }
+
+    if (turno == 'manhã' || turno == 'tarde' && prioridade >= 9) {
+        return console.log('TAREFA CRÍTICA/URGENTE');
+    } else if (turno == 'manhã' || turno == 'tarde' && prioridade > 7 ) {
+        return console.log('TAREFA IMPORTANTE');
+    } else if (turno == 'manhã' || turno == 'tarde' && prioridade < 7) {
+        return console.log('TAREFA NORMAL');
+    } else if (turno == 'noite') {
+        return console.log('TAREFA NÃO IMPORTANTE');
+    } else if(turno == 'hora inválida') {
+        return console.log('HORA INVÁLIDA');
+    } else if (hora < 1 || hora > 10) {
+        return console.log('PRIORIDADE INVÁLIDA');
+    }
+
+
+}
+
+// Exercício 2: Calculadora de Gastos Mensais
+function calcularSalario () {
+
+    alert('Calculadora de Gastos Mensais');
+
+    let custoTotal;
+    let saldoFinal;
+    let salario = parseFloat(prompt('Digite o seu salário mensal: '));
+    let aluguel = parseFloat(prompt('Digite o valor do aluguel mensal: '));
+    let alimentacao = parseFloat(prompt('Digite o valor gasto com alimentação mensalmente: '));
+    let lazer = parseFloat(prompt('Digite o valor gasto com lazer mensalmente: '));
+
+    custoTotal = aluguel + alimentacao + lazer;
+
+    saldoFinal = salario - custoTotal;
+
+    if (saldoFinal > 0) {
+        return console.log('SALDO POSITIVO');
+    } else if (saldoFinal == 0) {
+        return console.log('NO LIMITE');
+    } else {
+        return console.log('SALDO NEGATIVO');
+    }
+
+}
+
+// Exercício 3: Formatador de Nomes para a Agenda
+function formatarNome () {
+    alert('Formatador de Nomes para a Agenda');
+
+    let nome = prompt('Digite o nome completo: ');
+
+    return console.log(nome.trim().toUpperCase());
+}
+
+// Exercício 4: Contador de Dias para o Evento
+function contarDias() {
+
+    alert('Contador de Dias para o Evento');
+    let dataEvento = prompt('Digite a data do evento (AAAA-MM-DD): ');
+    let hoje = new Date();
+    
+    let mh = hoje.getMilliseconds();
+
+    let me = dataEvento.getMilliseconds();
+
+    let mdi = mh - me;
+
+    let di = mdi / 86400000;
+    
+    return console.log(Math.ceil(di));
+}
+
+// Exercício 5: Varredura de Compromissos (Loops)
+
+function validarHorario() {
+    alert('Varredura de Compromissos (Loops)');
+
+    const array = [8, 12, 25, 15, -2, 20];
+
+    array.forEach(index => {
+        if(index >= 0 && index <= 23) {
+            console.log(`Compromisso agendado para as ${index}`);
+        } else {
+            console.log(`Atenção: O horário ${index} é inválido`);
+        }
+    });
+}
