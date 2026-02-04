@@ -1,0 +1,64 @@
+body {
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+*{
+    width: 50%;
+    margin: 0 auto;
+}
+.neutro {
+    background-color:beige;
+    width: 100vh;
+    height: 100vh;
+}
+
+.frio {
+    background-color:deepskyblue;
+    width: 100vh;
+    height: 100vh;
+}
+
+.quente {
+    background-color: lightpink;
+    width: 100vh;
+    height: 100vh;
+}
+
+.box {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #e74c3c;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+    text-align: center;
+}
+
+.mensagem {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+}

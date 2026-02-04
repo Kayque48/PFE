@@ -82,19 +82,20 @@ function formatarNome () {
 // Exercício 4: Contador de Dias para o Evento
 function contarDias() {
 
-    alert('Contador de Dias para o Evento');
-    let dataEvento = prompt('Digite a data do evento (AAAA-MM-DD): ');
-    let hoje = new Date();
-    
-    let mh = hoje.getMilliseconds();
-
-    let me = dataEvento.getMilliseconds();
-
-    let mdi = mh - me;
-
-    let di = mdi / 86400000;
-    
-    return console.log(Math.ceil(di));
+    let diahoje = new Date();
+    let diaev  = parseInt(prompt("dia"));
+    let anoev  = parseInt(prompt("ano"));
+    let mesev  = parseInt(prompt("mes"));
+    let horaev  = parseInt(prompt("hora"));
+    let minutosev  = parseInt(prompt("minutos"));
+    let segundosev  = parseInt(prompt("segundos"));
+    let milisev  = parseInt(prompt("milissegundos"));
+    let diaevento = new Date(anoev,mesev,diaev,horaev,minutosev,segundosev,milisev);
+    let tempo =  diaevento.getTime() -  diahoje.getTime(); 
+    console.log(diahoje)
+    console.log(diaevento) 
+    let tempodia = tempo/86400000             
+    alert(Math.ceil(tempodia));
 }
 
 // contarDias();

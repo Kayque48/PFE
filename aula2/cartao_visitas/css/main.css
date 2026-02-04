@@ -1,0 +1,15 @@
+.preto {
+    background-color: black;
+}
+
+.roxo {
+    background-color: purple;
+}
+
+.dourado {
+    background-color: gold;
+}
+
+* {
+    color:rgb(241, 0, 0);
+}

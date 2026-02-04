@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Cartão de Visitas (Live Preview)</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <h1>Gerador de Cartão de Visitas (Live Preview)</h1>
+
+    <form>
+      <label for="">Nome</label>
+      <input type="text" id="nome" onkeyup="atualizarCartao" />
+      <label for="">Cargo</label>
+      <input type="text" id="cargo" />
+      <label for="">Cor</label>
+      <select id="cor">
+        <option value="preto">Preto</option>
+        <option value="roxo">Roxo</option>
+        <option value="dourado">Dourado</option>
+      </select>
+    </form>
+
+    <div class="card">
+      <p id="result-nome"></p>
+      <p id="result-cargo"></p>
+      <p id="result-cor"></p>
+    </div>
+
+    <script>
+      const nome = document.getElementById('nome');
+      const resultNome = document.getElementById('result-nome');
+      const cargo = document.getElementById('cargo');
+      const resultCargo = document.getElementById('result-cargo');
+      const cor = document.getElementById('cor');
+      const resulCor = document.getElementById('result-cor');
+      const card = document.querySelector('.card');
+
+      nome.onkeyup = function() {
+          resultNome.innerHTML = nome.value
+      };
+
+      cargo.onkeyup = function() {
+          resultCargo.innerHTML = cargo.value
+      };
+
+      cor.addEventListener("change", (event) => {
+          const selectCor = cor.value;
+
+          if(selectCor == 'roxo') {
+              card.classList.add('roxo');
+              card.classList.remove('preto', 'dourado');
+          } else if(selectCor == 'dourado'){
+              card.classList.add('dourado');
+              card.classList.remove('roxo', 'preto');
+          } else {
+              card.classList.add('preto');
+              card.classList.remove('roxo', 'dourado');
+          }
+      });
+    </script>
+  </body>
+</html>

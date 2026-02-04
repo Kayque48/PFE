@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura Dinâmico</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="neutro">
+
+
+    <h1 class="">Conversor de Temperatura Dinâmico</h1>
+
+    <div class="box">
+
+        <div class="cel">
+            <form onsubmit="conversao(); return false;">
+                <label for="temp">Temperatura em Celsius</label>
+                <input type="number" id="temp" name="temp" value="25.4">
+                <button type="submit">Converter</button>
+            </form>
+        </div>
+
+        <div class="mensagem">
+            <h2>Resultado Em Fahrenheit</h2>
+            <p id="resultado"></p>
+        </div>
+
+    </div>
+
+    <script>
+        function conversao() {
+            const C = parseFloat(document.getElementById("temp").value);
+            let F = C * 1.8 + 32;
+            document.getElementById("resultado").innerHTML = `${F.toFixed(2)}°F`;
+            clima();
+        }
+
+        function clima() {
+            const resultadoText = document.getElementById("resultado").textContent;
+            const temperatura = parseFloat(resultadoText);
+            if (temperatura >= 80) {
+                document.body.classList.add('quente');
+                document.body.classList.remove('neutro', 'frio');
+            } else if (temperatura < 80 && temperatura >= 50) {
+                document.body.classList.add('neutro');
+                document.body.classList.remove('quente', 'frio');
+            } else {
+                document.body.classList.add('frio');
+                document.body.classList.remove('quente', 'neutro');
+            }
+        }
+    </script>
+</body>
+
+</html>
