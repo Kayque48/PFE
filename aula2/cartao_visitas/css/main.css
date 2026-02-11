@@ -2,6 +2,10 @@
     background-color: black;
 }
 
+.preto > p {
+    color: white;
+}
+
 .roxo {
     background-color: purple;
 }
@@ -11,5 +15,6 @@
 }
 
 * {
-    color:rgb(241, 0, 0);
+    text-align: center;
 }
+

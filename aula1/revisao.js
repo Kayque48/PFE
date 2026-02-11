@@ -74,7 +74,11 @@ function formatarNome () {
 
     let nome = prompt('Digite o nome completo: ');
 
-    return console.log(nome.trim().toUpperCase());
+    let formatado = console.log(nome.trim().toUpperCase());
+
+    let quantidade = formatado.split(' ').lehgth;
+
+    return quantidade;
 }
 
 // formatarNome();
@@ -82,23 +86,32 @@ function formatarNome () {
 // Exercício 4: Contador de Dias para o Evento
 function contarDias() {
 
-    let diahoje = new Date();
-    let diaev  = parseInt(prompt("dia"));
-    let anoev  = parseInt(prompt("ano"));
-    let mesev  = parseInt(prompt("mes"));
-    let horaev  = parseInt(prompt("hora"));
-    let minutosev  = parseInt(prompt("minutos"));
-    let segundosev  = parseInt(prompt("segundos"));
-    let milisev  = parseInt(prompt("milissegundos"));
-    let diaevento = new Date(anoev,mesev,diaev,horaev,minutosev,segundosev,milisev);
-    let tempo =  diaevento.getTime() -  diahoje.getTime(); 
-    console.log(diahoje)
-    console.log(diaevento) 
-    let tempodia = tempo/86400000             
-    alert(Math.ceil(tempodia));
+    // let diahoje = new Date();
+    // let diaev  = parseInt(prompt("dia"));
+    // let anoev  = parseInt(prompt("ano"));
+    // let mesev  = parseInt(prompt("mes"));
+    // let horaev  = parseInt(prompt("hora"));
+    // let minutosev  = parseInt(prompt("minutos"));
+    // let segundosev  = parseInt(prompt("segundos"));
+    // let milisev  = parseInt(prompt("milissegundos"));
+    // let diaevento = new Date(anoev,mesev,diaev,horaev,minutosev,segundosev,milisev);
+    // let tempo =  diaevento.getTime() -  diahoje.getTime(); 
+    // console.log(diahoje)
+    // console.log(diaevento) 
+    // let tempodia = tempo/86400000             
+    // alert(Math.ceil(tempodia));
+
+    let dataHoje = new Date();
+    let dataEvento = new Date('2026-12-25');
+
+    let diferencaMs = dataEvento - dataHoje;
+
+    let umDiaMs = 24 * 60 * 60 * 1000;
+    let diasFaltando = Math.ceil(diferencaMs / umDiaMs);
+    alert(`Faltam ${diasFaltando} dias para o evento.`);
 }
 
-// contarDias();
+contarDias();
 
 // Exercício 5: Varredura de Compromissos (Loops)
 
