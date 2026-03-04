@@ -3,9 +3,8 @@
     margin: 0;
 }
 
-.d-flex flex-column flex-shrink-0 p-3 text-bg-dark {
-    background-color: beige;
-    height: 100vh;
-    font-size: 20px;
+body {
+    display: flex;
+    flex-direction: row;
 }
 
