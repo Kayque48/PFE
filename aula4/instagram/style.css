@@ -1,10 +1,186 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     display: flex;
-    flex-direction: row;
+    background: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #262626;
 }
 
+/* ── SIDEBAR ── */
+.sidebar {
+    position: fixed;
+    width: 220px;
+    min-height: 100vh;
+    flex-shrink: 0;
+    background: #fff;
+    border-right: 1px solid #dbdbdb;
+    z-index: 100;
+}
+
+/* ── MAIN ── */
+main {
+    margin-left: 220px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 24px 16px;
+}
+
+/* coluna central (stories + card) */
+.feed-center {
+    display: flex;
+    flex-direction: column;
+    width: 470px;
+    flex-shrink: 0;
+}
+
+/* ── STORIES ── */
+.storys {
+    display: flex;
+    gap: 16px;
+    border: 1px solid #dbdbdb;
+    border-radius: 12px;
+    background: #fff;
+    margin-bottom: 24px;
+    padding: 14px 16px;
+    overflow-x: auto;
+}
+
+.storys div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.storys p {
+    font-size: 12px;
+    margin: 0;
+    max-width: 72px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── CARD ── */
+.col {
+    width: 470px !important;
+    border-radius: 12px;
+    margin: 0 !important;
+}
+
+.card {
+    border: 1px solid #dbdbdb !important;
+    border-radius: 12px !important;
+    background: #fff;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid #efefef;
+}
+
+/* ── CAROUSEL ── */
+.carousel {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.carousel-inner,
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ── PERFIL (anel gradiente) ── */
+.perfil {
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 2px;
+    display: inline-block;
+}
+
+.perfil + p, .storys p { font-size: 12px; }
+
+/* ── ASIDE — sugestões ── */
+.aside {
+    width: 300px;
+    flex-shrink: 0;
+    padding-top: 8px;
+}
+
+.aside-perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.aside-perfil img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.aside-perfil .aside-info { flex: 1; }
+.aside-perfil .aside-name { font-size: 14px; font-weight: 600; display: block; }
+.aside-perfil .aside-handle { font-size: 13px; color: #8e8e8e; }
+.aside-perfil .btn-mudar {
+    background: none; border: none;
+    color: #0095f6; font-weight: 600;
+    font-size: 13px; cursor: pointer;
+}
+
+.sugestoes-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+.sugestoes-titulo span { font-size: 13px; font-weight: 600; color: #8e8e8e; }
+.sugestoes-titulo a { font-size: 13px; font-weight: 700; color: #262626; text-decoration: none; }
+
+.sugestao-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+.sugestao-row img {
+    width: 36px; height: 36px;
+    border-radius: 50%; object-fit: cover;
+}
+.sugestao-meta { flex: 1; }
+.sugestao-meta .s-nome { font-size: 13px; font-weight: 600; display: block; }
+.sugestao-meta .s-motivo { font-size: 12px; color: #8e8e8e; }
+.btn-seguir {
+    background: none; border: none;
+    color: #0095f6; font-weight: 600;
+    font-size: 13px; cursor: pointer;
+}
+
+.aside-footer {
+    margin-top: 24px;
+    font-size: 11px;
+    color: #c7c7c7;
+    line-height: 2;
+}
+.aside-footer a { color: #c7c7c7; text-decoration: none; }
