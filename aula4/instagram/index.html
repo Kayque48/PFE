@@ -95,6 +95,7 @@
             flex-direction: column;
             width: 470px;
             flex-shrink: 0;
+            gap: 24px;
         }
 
         /* ── STORIES ── */
@@ -104,12 +105,13 @@
             border: 1px solid #dbdbdb;
             border-radius: 12px;
             background: #fff;
-            margin-bottom: 24px;
             padding: 14px 16px;
             overflow-x: auto;
         }
 
-        .storys::-webkit-scrollbar { display: none; }
+        .storys::-webkit-scrollbar {
+            display: none;
+        }
 
         .storys div {
             display: flex;
@@ -130,22 +132,16 @@
             white-space: nowrap;
         }
 
-        /* ── CARD ── */
-        .col {
-            width: 470px !important;
+        /* ── CARD / POST ── */
+        .post-card {
+            width: 470px;
+            border: 1px solid #dbdbdb;
             border-radius: 12px;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        .card {
-            border: 1px solid #dbdbdb !important;
-            border-radius: 12px !important;
             background: #fff;
             overflow: hidden;
         }
 
-        header {
+        .post-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -180,8 +176,7 @@
             flex-shrink: 0;
         }
 
-        .perfil img,
-        img.perfil {
+        .perfil img {
             border: 2px solid #fff;
             border-radius: 50%;
             display: block;
@@ -208,9 +203,20 @@
             object-fit: cover;
         }
 
-        .aside-info { flex: 1; }
-        .aside-name { font-size: 14px; font-weight: 600; display: block; }
-        .aside-handle { font-size: 13px; color: #8e8e8e; }
+        .aside-info {
+            flex: 1;
+        }
+
+        .aside-name {
+            font-size: 14px;
+            font-weight: 600;
+            display: block;
+        }
+
+        .aside-handle {
+            font-size: 13px;
+            color: #8e8e8e;
+        }
 
         .btn-mudar {
             background: none;
@@ -228,8 +234,18 @@
             margin-bottom: 14px;
         }
 
-        .sugestoes-titulo span { font-size: 13px; font-weight: 600; color: #8e8e8e; }
-        .sugestoes-titulo a { font-size: 13px; font-weight: 700; color: #262626; text-decoration: none; }
+        .sugestoes-titulo span {
+            font-size: 13px;
+            font-weight: 600;
+            color: #8e8e8e;
+        }
+
+        .sugestoes-titulo a {
+            font-size: 13px;
+            font-weight: 700;
+            color: #262626;
+            text-decoration: none;
+        }
 
         .sugestao-row {
             display: flex;
@@ -245,9 +261,20 @@
             object-fit: cover;
         }
 
-        .sugestao-meta { flex: 1; }
-        .s-nome { font-size: 13px; font-weight: 600; display: block; }
-        .s-motivo { font-size: 12px; color: #8e8e8e; }
+        .sugestao-meta {
+            flex: 1;
+        }
+
+        .s-nome {
+            font-size: 13px;
+            font-weight: 600;
+            display: block;
+        }
+
+        .s-motivo {
+            font-size: 12px;
+            color: #8e8e8e;
+        }
 
         .btn-seguir {
             background: none;
@@ -265,8 +292,14 @@
             line-height: 2;
         }
 
-        .aside-footer a { color: #c7c7c7; text-decoration: none; }
-        .aside-footer a:hover { text-decoration: underline; }
+        .aside-footer a {
+            color: #c7c7c7;
+            text-decoration: none;
+        }
+
+        .aside-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -279,7 +312,7 @@
                 style="width: 130px; margin-left: -4px;" alt="Instagram">
         </a>
         <hr class="mb-3">
-        <ul class="nav  flex-column gap-1 mb-auto">
+        <ul class="nav flex-column gap-1 mb-auto">
             <li class="nav-item">
                 <a href="#" class="nav-link active">
                     <img src="icon/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
@@ -327,172 +360,333 @@
     <!-- ── MAIN ── -->
     <main>
 
-        <!-- coluna central: stories + feed -->
         <div class="feed-center">
 
             <!-- STORIES -->
             <div class="storys">
                 <div>
-                    <span class="perfil">
-                        <img width="62" height="62" src="https://github.com/kayque48.png" alt="">
-                    </span>
+                    <span class="perfil"><img width="62" height="62" src="https://github.com/kayque48.png"
+                            alt=""></span>
                     <p>kayque48</p>
                 </div>
                 <div>
-                    <span class="perfil">
-                        <img width="62" height="62" src="https://i.pinimg.com/736x/16/af/31/16af310043188316493bd26c94be1fbc.jpg" alt="">
-                    </span>
+                    <span class="perfil"><img width="62" height="62"
+                            src="https://i.pinimg.com/736x/16/af/31/16af310043188316493bd26c94be1fbc.jpg" alt=""></span>
                     <p>Gustavo</p>
                 </div>
                 <div>
-                    <span class="perfil">
-                        <img width="62" height="62" src="https://i.pinimg.com/736x/0b/6c/44/0b6c44a2bb3e369362c57911c66fbcc9.jpg" alt="">
-                    </span>
+                    <span class="perfil"><img width="62" height="62"
+                            src="https://i.pinimg.com/736x/0b/6c/44/0b6c44a2bb3e369362c57911c66fbcc9.jpg" alt=""></span>
                     <p>Makelove</p>
                 </div>
                 <div>
-                    <span class="perfil">
-                        <img width="62" height="62" src="https://i.pinimg.com/1200x/30/d9/9d/30d99dbf46c2343371b97af0c7b0c4d8.jpg" alt="">
-                    </span>
+                    <span class="perfil"><img width="62" height="62"
+                            src="https://i.pinimg.com/1200x/30/d9/9d/30d99dbf46c2343371b97af0c7b0c4d8.jpg"
+                            alt=""></span>
                     <p>Pushanka</p>
                 </div>
                 <div>
-                    <span class="perfil">
-                        <img width="62" height="62" src="https://i.pinimg.com/736x/e0/15/87/e01587d2d988ec659efbd09b47b3324d.jpg" alt="">
-                    </span>
+                    <span class="perfil"><img width="62" height="62"
+                            src="https://i.pinimg.com/736x/e0/15/87/e01587d2d988ec659efbd09b47b3324d.jpg" alt=""></span>
                     <p>NekoArcSad</p>
                 </div>
                 <div>
-                    <span class="perfil">
-                        <img width="62" height="62" src="file:///C:/Users/52354217870/Desktop/PFE/aula4/IMG/vitoriaMolhada.jpg" alt="">
-                    </span>
-                    <p>Vy</p>
+                    <span class="perfil"><img width="62" height="62"
+                            src="https://i.pinimg.com/736x/a3/55/58/a35558f5e72c3e3edda833ba58345f7e.jpg" alt=""></span>
+                    <p>ACeita?</p>
                 </div>
             </div>
 
-            <!-- CARD / POST -->
-            <div class="col">
-                <div class="card shadow-sm">
-
-                    <!-- Header do post -->
-                    <header>
-                        <div class="d-flex align-items-center gap-2">
-                            <span class="perfil">
-                                <img width="36" height="36" src="https://i.pinimg.com/736x/eb/06/8e/eb068e4f40511d05dc5ca761ff7dc14f.jpg" alt="">
-                            </span>
-                            <p class="mb-0 fw-semibold" style="font-size:14px;">André Young</p>
+            <!-- ── POST 1 ── -->
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="perfil"><img width="36" height="36" src="https://github.com/kayque48.png"
+                                alt=""></span>
+                        <div>
+                            <p class="mb-0 fw-semibold" style="font-size:14px;">kayque48</p>
+                            <p class="mb-0" style="font-size:12px; color:#8e8e8e;">São Paulo, Brasil</p>
                         </div>
-                        <span style="cursor: pointer;">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#262626">
-                                <circle cx="5" cy="12" r="2" />
-                                <circle cx="12" cy="12" r="2" />
-                                <circle cx="19" cy="12" r="2" />
-                            </svg>
-                        </span>
-                    </header> 
-
-                    <!-- Carousel -->
-                    <div id="myCarousel" class="carousel slide">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
-                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="https://i.pinimg.com/736x/89/62/fc/8962fc1a9edcad380c77d0865a36efa8.jpg"
-                                    class="d-block w-100" alt="Ankylosaurus vs T-Rex">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://i.pinimg.com/originals/92/52/d4/9252d4c7e5f24bf7b9b5fb3bcd032f11.png"
-                                    class="d-block w-100" alt="Spinosaurus ligando">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://i.pinimg.com/736x/e9/42/a5/e942a5c5622a879f01707e7e87ba170a.jpg"
-                                    class="d-block w-100" alt="Dino no banheiro">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Anterior</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Próximo</span>
-                        </button>
                     </div>
+                    <span style="cursor:pointer;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#262626">
+                            <circle cx="5" cy="12" r="2" />
+                            <circle cx="12" cy="12" r="2" />
+                            <circle cx="19" cy="12" r="2" />
+                        </svg>
+                    </span>
+                </div>
 
-                    <!-- Card body -->
-                    <div class="card-body px-3 py-2">
+                <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"
+                            aria-current="true"></button>
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://i.pinimg.com/736x/89/62/fc/8962fc1a9edcad380c77d0865a36efa8.jpg"
+                                class="d-block w-100" alt="Ankylosaurus vs T-Rex">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://i.pinimg.com/originals/92/52/d4/9252d4c7e5f24bf7b9b5fb3bcd032f11.png"
+                                class="d-block w-100" alt="Spinosaurus ligando">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://i.pinimg.com/736x/e9/42/a5/e942a5c5622a879f01707e7e87ba170a.jpg"
+                                class="d-block w-100" alt="Dino no banheiro">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
 
-                        <!-- Ações -->
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <div class="d-flex gap-3">
-                                <span style="cursor:pointer;">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                                    </svg>
-                                </span>
-                                <span style="cursor:pointer;">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                                    </svg>
-                                </span>
-                                <span style="cursor:pointer;">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <line x1="22" y1="2" x2="11" y2="13"/>
-                                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                                    </svg>
-                                </span>
-                            </div>
+                <div class="card-body px-3 py-2">
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                        <div class="d-flex gap-3">
                             <span style="cursor:pointer;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="19 21 12 16 5 21 5 3 19 3"/>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </span>
+                            <span style="cursor:pointer;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </span>
+                            <span style="cursor:pointer;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
                                 </svg>
                             </span>
                         </div>
+                        <span style="cursor:pointer;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="19 21 12 16 5 21 5 3 19 3" />
+                            </svg>
+                        </span>
+                    </div>
+                    <p class="mb-1 fw-semibold" style="font-size:14px;">65.847 curtidas</p>
+                    <p class="mb-1" style="font-size:14px;">
+                        <span class="fw-semibold">dino.daily</span>
+                        Slide 1: batalha épica entre Ankylosaurus vs T-Rex 🦕⚔️ — spoiler: a cauda do anky não
+                        perdoa.<br>
+                        Slide 2: o Spinosaurus te ligando às 3 da manhã 📞🦖 você atende??<br>
+                        Slide 3: ele só queria um momento de paz 🚽😭
+                        <span style="color:#8e8e8e; cursor:pointer;">mais</span>
+                    </p>
+                    <p class="mb-1" style="font-size:14px; color:#00376b;">#dinossauros #trex #spinosaurus #ankylosaurus
+                        #memes #jurassic #paleontologia</p>
+                    <p class="mb-1" style="font-size:14px; color:#8e8e8e; cursor:pointer;">Ver todos os 1.203
+                        comentários</p>
+                    <p class="mb-2"
+                        style="font-size:11px; color:#8e8e8e; text-transform:uppercase; letter-spacing:.3px;">Há 9
+                        minutos</p>
+                    <div class="d-flex align-items-center gap-2"
+                        style="border-top:1px solid #efefef; padding-top:10px;">
+                        <img src="https://github.com/kayque48.png" width="28" height="28" class="rounded-circle" alt="">
+                        <input type="text" placeholder="Adicione um comentário..."
+                            style="border:none; outline:none; background:transparent; font-size:14px; flex:1;">
+                        <span
+                            style="color:#0095f6; font-weight:600; font-size:14px; cursor:pointer; opacity:0.4;">Publicar</span>
+                    </div>
+                </div>
+            </div>
 
-                        <!-- Curtidas -->
-                        <p class="mb-1 fw-semibold" style="font-size:14px;">65.847 curtidas</p>
-
-                        <!-- Legenda -->
-                        <p class="mb-1" style="font-size:14px;">
-                            <span class="fw-semibold">dino.daily</span>
-                            Slide 1: batalha épica entre Ankylosaurus vs T-Rex 🦕⚔️ — spoiler: a cauda do anky não perdoa.<br>
-                            Slide 2: o Spinosaurus te ligando às 3 da manhã 📞🦖 você atende??<br>
-                            Slide 3: ele só queria um momento de paz 🚽😭
-                            <span style="color:#8e8e8e; cursor:pointer;">mais</span>
-                        </p>
-
-                        <!-- Hashtags -->
-                        <p class="mb-1" style="font-size:14px; color:#00376b;">
-                            #dinossauros #trex #spinosaurus #ankylosaurus #memes #jurassic #paleontologia
-                        </p>
-
-                        <!-- Comentários -->
-                        <p class="mb-1" style="font-size:14px; color:#8e8e8e; cursor:pointer;">Ver todos os 1.203 comentários</p>
-
-                        <!-- Tempo -->
-                        <p class="mb-2" style="font-size:11px; color:#8e8e8e; text-transform:uppercase; letter-spacing:.3px;">Há 9 minutos</p>
-
-                        <!-- Adicionar comentário -->
-                        <div class="d-flex align-items-center gap-2" style="border-top:1px solid #efefef; padding-top:10px;">
-                            <img src="https://github.com/kayque48.png" width="28" height="28" class="rounded-circle" alt="">
-                            <input type="text" placeholder="Adicione um comentário..."
-                                style="border:none; outline:none; background:transparent; font-size:14px; flex:1;">
-                            <span style="color:#0095f6; font-weight:600; font-size:14px; cursor:pointer; opacity:0.4;">Publicar</span>
+            <!-- ── POST 2 ── -->
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="perfil"><img width="36" height="36"
+                                src="https://i.pinimg.com/736x/16/af/31/16af310043188316493bd26c94be1fbc.jpg"
+                                alt=""></span>
+                        <div>
+                            <p class="mb-0 fw-semibold" style="font-size:14px;">Gustavo</p>
+                            <p class="mb-0" style="font-size:12px; color:#8e8e8e;">Rio de Janeiro, Brasil</p>
                         </div>
+                    </div>
+                    <span style="cursor:pointer;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#262626">
+                            <circle cx="5" cy="12" r="2" />
+                            <circle cx="12" cy="12" r="2" />
+                            <circle cx="19" cy="12" r="2" />
+                        </svg>
+                    </span>
+                </div>
 
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/pZ-oEuWMszs"
+                        style="width:100%; aspect-ratio:16/9; border:none; display:block;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="card-body px-3 py-2">
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                        <div class="d-flex gap-3">
+                            <span style="cursor:pointer;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </span>
+                            <span style="cursor:pointer;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </span>
+                            <span style="cursor:pointer;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                </svg>
+                            </span>
+                        </div>
+                        <span style="cursor:pointer;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="19 21 12 16 5 21 5 3 19 3" />
+                            </svg>
+                        </span>
+                    </div>
+                    <p class="mb-1 fw-semibold" style="font-size:14px;">12.403 curtidas</p>
+                    <p class="mb-1" style="font-size:14px;">
+                        <span class="fw-semibold">Gustavo</span>
+                        Quando você descobre que o T-Rex tinha bracinhos mas ainda assim era o rei 👑🦖
+                        Respeitem o processo, galera.
+                        <span style="color:#8e8e8e; cursor:pointer;">mais</span>
+                    </p>
+                    <p class="mb-1" style="font-size:14px; color:#00376b;">#jurassic #trex #memes #dinossauros #humor
+                    </p>
+                    <p class="mb-1" style="font-size:14px; color:#8e8e8e; cursor:pointer;">Ver todos os 348 comentários
+                    </p>
+                    <p class="mb-2"
+                        style="font-size:11px; color:#8e8e8e; text-transform:uppercase; letter-spacing:.3px;">Há 42
+                        minutos</p>
+                    <div class="d-flex align-items-center gap-2"
+                        style="border-top:1px solid #efefef; padding-top:10px;">
+                        <img src="https://github.com/kayque48.png" width="28" height="28" class="rounded-circle" alt="">
+                        <input type="text" placeholder="Adicione um comentário..."
+                            style="border:none; outline:none; background:transparent; font-size:14px; flex:1;">
+                        <span
+                            style="color:#0095f6; font-weight:600; font-size:14px; cursor:pointer; opacity:0.4;">Publicar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── POST 3 ── -->
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="perfil"><img width="36" height="36"
+                                src="https://i.pinimg.com/736x/7e/33/80/7e3380a9d30bcb7857a955b5270ae140.jpg"
+                                alt=""></span>
+                        <div>
+                            <p class="mb-0 fw-semibold" style="font-size:14px;">Henrique-RMotta</p>
+                            <p class="mb-0" style="font-size:12px; color:#8e8e8e;">Belo Horizonte, Brasil</p>
+                        </div>
+                    </div>
+                    <span style="cursor:pointer;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#262626">
+                            <circle cx="5" cy="12" r="2" />
+                            <circle cx="12" cy="12" r="2" />
+                            <circle cx="19" cy="12" r="2" />
+                        </svg>
+                    </span>
+                </div>
+
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/I5aFC-CDejo"
+                        style="width:100%; aspect-ratio:9/16; border:none; display:block;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="card-body px-3 py-2">
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                        <div class="d-flex gap-3">
+                            <span style="cursor:pointer;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </span>
+                            <span style="cursor:pointer;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </span>
+                            <span style="cursor:pointer;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                </svg>
+                            </span>
+                        </div>
+                        <span style="cursor:pointer;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262626"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="19 21 12 16 5 21 5 3 19 3" />
+                            </svg>
+                        </span>
+                    </div>
+
+                    <p class="mb-1 fw-semibold" style="font-size:14px;">3.891 curtidas</p>
+
+                    <p class="mb-1" style="font-size:14px;">
+                        <span class="fw-semibold">Henrique-RMotta</span>
+                        Assistindo o clássico da FURIA de novo e ainda dá arrepio 🔥🇧🇷
+                        Esse time é outra coisa, rapazes. KSCERATO, yuurih, art... que lineup lendário.
+                        CS:GO no seu melhor — pura estratégia, pura raça.
+                        <span style="color:#8e8e8e; cursor:pointer;">mais</span>
+                    </p>
+
+                    <p class="mb-1" style="font-size:14px; color:#00376b;">
+                        #FURIA #CSGO #CounterStrike #FURIAEsports #Brasil #esports #kscerato #yuurih #art
+                    </p>
+
+                    <p class="mb-1" style="font-size:14px; color:#8e8e8e; cursor:pointer;">Ver todos os 214 comentários
+                    </p>
+                    <p class="mb-2"
+                        style="font-size:11px; color:#8e8e8e; text-transform:uppercase; letter-spacing:.3px;">Há 2 horas
+                    </p>
+
+                    <div class="d-flex align-items-center gap-2"
+                        style="border-top:1px solid #efefef; padding-top:10px;">
+                        <img src="https://github.com/kayque48.png" width="28" height="28" class="rounded-circle" alt="">
+                        <input type="text" placeholder="Adicione um comentário..."
+                            style="border:none; outline:none; background:transparent; font-size:14px; flex:1;">
+                        <span
+                            style="color:#0095f6; font-weight:600; font-size:14px; cursor:pointer; opacity:0.4;">Publicar</span>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- ── ASIDE — sugestões ── -->
+        <!-- ── ASIDE ── -->
         <aside class="aside">
-
-            <!-- Perfil próprio -->
             <div class="aside-perfil">
                 <img src="https://github.com/kayque48.png" alt="">
                 <div class="aside-info">
@@ -502,7 +696,6 @@
                 <button class="btn-mudar">Mudar</button>
             </div>
 
-            <!-- Sugestões -->
             <div class="sugestoes-titulo">
                 <span>Sugestões para você</span>
                 <a href="#">Ver tudo</a>
@@ -553,15 +746,12 @@
                 <button class="btn-seguir">Seguir</button>
             </div>
 
-            <!-- Footer -->
             <div class="aside-footer">
                 <a href="#">Sobre</a> · <a href="#">Ajuda</a> · <a href="#">Imprensa</a> · <a href="#">API</a> ·
                 <a href="#">Carreiras</a> · <a href="#">Privacidade</a> · <a href="#">Termos</a> ·
                 <a href="#">Localizações</a> · <a href="#">Idioma</a>
-                <br>
-                © 2025 INSTAGRAM FROM META
+                <br>© 2025 INSTAGRAM FROM META
             </div>
-
         </aside>
 
     </main>

@@ -184,3 +184,15 @@ header {
     line-height: 2;
 }
 .aside-footer a { color: #c7c7c7; text-decoration: none; }
+
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
