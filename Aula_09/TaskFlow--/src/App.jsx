@@ -114,7 +114,6 @@ function App() {
           placeholder="Buscar tarefas..."
         />
       </section>
-
       {/* Botões de filtro por status */}
       <section className="filter-section">
         {["Todas", "Pendentes", "Concluídas"].map(f => (
