@@ -6,6 +6,7 @@ function App() {
   const [eventType, setEventType] = useState("Palestra");
   const [eventVagas, setEventVagas] = useState(50);
   const [eventList, setEventList] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   const [filter, setFilter] = useState("Todos");
 
@@ -69,7 +70,7 @@ function App() {
 
   const ClearList = () => {
     const confirmed = window.confirm("Tem certeza que deseja remover todos as atividades?");
-    if(confirmed) setEventList([]);
+    if (confirmed) setEventList([]);
   };
 
   const filteredEvents = eventList.filter(evt => {
@@ -84,6 +85,7 @@ function App() {
   return (
     <div className="app-container">
       <header>
+        <img src="/senai.svg" alt="SENAI Logo" className="logo" />
         <h1>EventPulse</h1>
         <p>Gestão de Eventos Acadêmicos</p>
       </header>
@@ -162,7 +164,34 @@ ${item.status.toLowerCase().replace(" ", "-")}`}
             </div>
           </div>
         ))}
+
+
+        <div className='cli'>
+
+        </div>
+
       </main>
+
+      {/* Botão flutuante */}
+      <button className="fab" onClick={() => setShowModal(true)}>
+        <img src="/favicon_css.png" alt="info" />
+      </button>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+            <h2>Changelog</h2>
+            <ul>
+              <li>Adicionado botão de inscrição de aluno</li>
+              <li>Adicionado botão limpar cronograma</li>
+              <li>Visual redesenhado com identidade SENAI</li>
+            </ul>
+            <button onClick={() => setShowModal(false)}>Fechar</button>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
