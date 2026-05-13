@@ -442,3 +442,52 @@ small {
   font-weight: 600;
   cursor: pointer;
 }
+
+.edit-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.modal-form-group label {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.modal-form-group input, .modal-form-group select {
+  padding: 10px;
+  background: var(--gray-900);
+  border: 1px solid var(--gray-600);
+  color: white;
+  border-radius: 4px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.save-btn {
+  background: var(--painel) !important;
+  flex: 2;
+}
+
+.cancel-btn {
+  background: var(--gray-600) !important;
+  flex: 1;
+}
+
+/* Garante que o modal de edição tenha destaque */
+.edit-modal {
+  border-top: 3px solid var(--workshop) !important;
+}
