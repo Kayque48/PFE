@@ -93,6 +93,7 @@ function App() {
 
   // Função para remover um evento da lista
   const deleteEvent = (id) => {
+    const confirmed = window.confirm("Tem certeza que deseja remover todos as atividades?");
     setEventList(eventList.filter(evt => evt.id !== id));
   };
 
